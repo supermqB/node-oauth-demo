@@ -9,17 +9,17 @@
 </head>
 
 <body>
-        <a id="login">Login with GitHub</a>
+        <a id="login" href="/oauth/forward">Login with hydra</a>
 
 <script>
+  const randomStr = () => Math.random().toString(36).substring(2, 15);
   // fill in your cliend_id
-  const client_id = '7e015d8ce32370079895';
+  const client_id = 'node-client-example';
+  const authorize_uri = 'http://127.0.0.1:4444/oauth2/auth';
+  const redirect_uri = 'http://127.0.0.1:8080/oauth/callback';
 
-  const authorize_uri = 'https://github.com/login/oauth/authorize';
-  const redirect_uri = 'http://localhost:8080/oauth/redirect';
-
-  const link = document.getElementById('login');
-  link.href = `${authorize_uri}?client_id=${client_id}&redirect_uri=${redirect_uri}`;
+  // const link = document.getElementById('login');
+  //link.href = `${authorize_uri}?client_id=${client_id}&redirect_uri=${redirect_uri}&response_type=code&scope=offline_access+offline+openid&state=${randomStr()+randomStr()}`;
 </script>
 
 </body>

@@ -11,5 +11,9 @@
     "koa": "^2.7.0",
     "koa-route": "^3.2.0",
     "koa-static": "^5.0.0"
+  },
+  "devDependencies": {
+    "form-data": "^3.0.0",
+    "qs": "^6.9.4"
   }
 }
