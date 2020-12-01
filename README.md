@@ -1,48 +1,29 @@
-A very simple demo of OAuth 2.0 using Node.js，to add GitHub login to your app and access GitHub API.
+这是一个基于node + express的 hydra oAuth 2.0 测试应用
+## 注册应用
+ ```
+ hydra clients create \
+    --endpoint http://localhost:4445 \
+    --id node-client-example \
+    --secret 37KXvZxQcws~DLgrV51kNHHcbi \
+    --grant-types authorization_code,refresh_token \
+    --response-types code,id_token \
+    --scope openid,offline_access \
+    --callbacks http://127.0.0.1:8080/oauth/callback
 
-![](https://www.wangbase.com/blogimg/asset/201904/bg2019042103.jpg)
+ ```
+注意： endpoint 是你hydra实例的地址
+- docker compose 版本：http://localhost:4445
+- k8s helm 版本： http://admin.hydra.localhost
 
-This demo is slightly modified from sohamkamani's [node-oauth-example](https://github.com/sohamkamani/node-oauth-example). More details in his [blog](https://www.sohamkamani.com/blog/javascript/2018-06-24-oauth-with-node-js/) (English) or my [blog](http://www.ruanyifeng.com/blog/2019/04/github-oauth.html) (Chinese).
-
-## Step one: register the app
-
-Register the app on Github : https://github.com/settings/applications/new .
-
-![](https://www.wangbase.com/blogimg/asset/201904/bg2019042102.jpg)
-
-- "Application name" field, enter any name you like.
-- "Homepage URL" field, enter "http://localhost:8080/ ".
-- "callback URL" field, enter "http://localhost:8080/oauth/redirect ".
-
-Once register, you will get a client ID and a client secret.
-
-## Step two: get the code
-
-First, clone the repo.
-
-```bash
-$ git clone git@github.com:ruanyf/node-oauth-demo.git
-$ cd node-oauth-demo
-```
-
-Second, modify the config.
-
-- `index.js`: replace the values of the `clientID` and `clientSecret` variables.
-- `public/index.html`: replace the values of the `client_id` variable.
-
-Third, install the dependencies.
+## 运行此应用
 
 ```bash
 $ npm install
-```
-
-## Step three: run the server
-
-Now, run the server.
-
-```bash
 $ node index.js
 ```
 
-Visit http://localhost:8080 in your browser, and click the link to login GitHub.
+## 访问测试应用
+```
+http://localhost:8080
+```
 
