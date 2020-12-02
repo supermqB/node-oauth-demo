@@ -10,13 +10,17 @@ const OAUTH_GRANT_TYPES = {
   refresh: 'refresh_token',
 };
 
+const hydraPublicURL = process.env.HYDRA_PUBLIC_URL || 'http://127.0.0.1:4444';
+const hydraAdminURL = process.env.HYDRA_ADMIN_URL || 'http://127.0.0.1:4445';
+
+
 const oAuthConfig = {
   clientID: 'node-client-example',
   clientSecret: '37KXvZxQcws~DLgrV51kNHHcbi',
-  authorizeURI: 'http://127.0.0.1:4444/oauth2/auth',
-  tokenURI: 'http://127.0.0.1:4444/oauth2/token',
+  authorizeURI: `${hydraPublicURL}/oauth2/auth`,
+  tokenURI: `${hydraPublicURL}/oauth2/token`,
   callbackURI: 'http://127.0.0.1:8080/oauth/callback',
-  introspectURI: 'http://127.0.0.1:4445/oauth2/introspect',
+  introspectURI: `${hydraAdminURL}/oauth2/introspect`,
   scopes: ['openid', 'offline_access'],
 };
 

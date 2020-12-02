@@ -4,8 +4,11 @@
   "description": "a demo of OAuth2.0 using node",
   "main": "index.js",
   "repository": "https://github.com/ruanyf/node-oauth-demo",
-  "author": "Ruan Yifeng",
   "license": "MIT",
+  "scripts": {
+    "start": "node index.js",
+    "start:k8s": "HYDRA_PUBLIC_URL=http://public.hydra.localhost HYDRA_ADMIN_URL=http://admin.hydra.localhost node index.js"
+  },
   "dependencies": {
     "axios": "^0.18.0",
     "koa": "^2.7.0",
