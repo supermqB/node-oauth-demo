@@ -11,7 +11,7 @@
     --callbacks http://127.0.0.1:8080/oauth/callback
 
  ```
-注意： endpoint 是你hydra实例的地址
+> *注意： endpoint 是你hydra实例的地址*
 - docker compose 版本：http://localhost:4445
 - k8s helm 版本： http://admin.hydra.localhost
 
