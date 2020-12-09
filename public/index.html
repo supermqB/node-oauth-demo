@@ -1,27 +1,30 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Node OAuth2 Demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      body {
+        width: 800px;
+        margin: 100px auto;
+        padding: 15px;
+        font-weight: 900;
+        font-size: 18px;
+      }
 
-<head>
-        <meta charset="utf-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Node OAuth2 Demo</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-</head>
+      div {
+        margin: 15px 0;
+      }
+    </style>
+  </head>
 
-<body>
-        <a id="login" href="/oauth/forward">Login with hydra</a>
-
-<script>
-  const randomStr = () => Math.random().toString(36).substring(2, 15);
-  // fill in your cliend_id
-  const client_id = 'node-client-example';
-  const authorize_uri = 'http://127.0.0.1:4444/oauth2/auth';
-  const redirect_uri = 'http://127.0.0.1:8080/oauth/callback';
-
-  // const link = document.getElementById('login');
-  //link.href = `${authorize_uri}?client_id=${client_id}&redirect_uri=${redirect_uri}&response_type=code&scope=offline_access+offline+openid&state=${randomStr()+randomStr()}`;
-</script>
-
-</body>
-
+  <body>
+    <img src="./lr_bg.jpeg" />
+    <div>
+      这是一个第三方模拟应用，该应用可能使用，开放应用平台的数据权限，请点击
+      <a id="login" href="/oauth/forward">请求授权</a> 触发
+    </div>
+  </body>
 </html>
