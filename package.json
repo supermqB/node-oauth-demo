@@ -7,7 +7,8 @@
   "license": "MIT",
   "scripts": {
     "start": "node index.js",
-    "start:k8s": "HYDRA_PUBLIC_URL=http://public.hydra.localhost HYDRA_ADMIN_URL=http://admin.hydra.localhost node index.js"
+    "start:k8s": "HYDRA_PUBLIC_URL=http://public.hydra.localhost HYDRA_ADMIN_URL=http://admin.hydra.localhost node index.js",
+    "start:sc-test": "HYDRA_PUBLIC_URL=http://120.221.160.237:4444 HYDRA_ADMIN_URL=http://120.221.160.237:4445 node index.js"
   },
   "dependencies": {
     "axios": "^0.18.0",

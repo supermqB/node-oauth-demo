@@ -51,13 +51,15 @@ const callback = async ctx => {
 
   console.log(tokenInfo);
 
-  try {
-    tokenInfo = await getToken(
-      { state, refresh_token: tokenInfo.refresh_token },
-      OAUTH_GRANT_TYPES.refresh,
-    );
-  } catch (e) {
-    console.log(e);
+  if (tokenInfo.refresh_token) {
+    try {
+      tokenInfo = await getToken(
+        { state, refresh_token: tokenInfo.refresh_token },
+        OAUTH_GRANT_TYPES.refresh,
+      );
+    } catch (e) {
+      console.log(e);
+    }
   }
 
   const userInfo = await introspect(tokenInfo.access_token);
