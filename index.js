@@ -21,7 +21,8 @@ const oAuthConfig = {
   tokenURI: `${hydraPublicURL}/oauth2/token`,
   callbackURI: 'http://127.0.0.1:8080/oauth/callback',
   introspectURI: `${hydraAdminURL}/oauth2/introspect`,
-  scopes: ['openid', 'offline_access'],
+  scopes: [ 'offline_access', 'person_health', 'insurance_service', 'clinical_exp', 'health_check_service', 'patient_360'],
+  //scopes: ['openid', 'offline_access']
 };
 
 const app = new Koa();
